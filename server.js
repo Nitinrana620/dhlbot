@@ -18,7 +18,8 @@ server.use((req, res, next) => f.verifySignature(req, res, next));
 //seed db
 var mongoose = require('mongoose');
 // mongoose.connect("mongodb://localhost/dhlbot"); 
-mongoose.connect("mongodb://rakibhasan48:420manush@ds117913.mlab.com:17913/dhlbot"); 
+const {MONGO_URI} = require('./config');
+mongoose.connect(`${MONGO_URI}`); 
 const seedDB = require('./seedDB');
 //seedDB();
 

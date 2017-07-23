@@ -1,6 +1,7 @@
 'use strict';
 var mongoose = require('mongoose');
 // mongoose.connect("mongodb://localhost/dhlbot"); 
+const {MONGO_URI} = require('../config');
 mongoose.connect(`${MONGO_URI}`);
 var Customers = require('../seedDB/customers');
 
